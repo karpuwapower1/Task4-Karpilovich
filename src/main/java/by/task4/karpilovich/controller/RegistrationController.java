@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import by.task4.karpilovich.entity.User;
-import by.task4.karpilovich.service.UserService;
+import by.task4.karpilovich.service.impl.UserServiceImpl;
 
 @Controller
 public class RegistrationController {
@@ -26,7 +26,7 @@ public class RegistrationController {
 	private static final String RETURN_TO_REGISTRATION_PAGE = "registration";
 
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userService;
 
 	@Autowired
 	protected AuthenticationManager authenticationManager;

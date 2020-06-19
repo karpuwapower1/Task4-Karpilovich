@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import by.task4.karpilovich.handler.LoginSucsessHandler;
-import by.task4.karpilovich.service.UserService;
+import by.task4.karpilovich.service.impl.UserServiceImpl;
 
 @Configuration
 @EnableWebSecurity
@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private static final int MAXIMUM_SESSIONS = -1;
 	
 	@Autowired
-	UserService userService;
+	UserServiceImpl userService;
 	@Autowired
 	AuthenticationSuccessHandler loginHandler;
 	

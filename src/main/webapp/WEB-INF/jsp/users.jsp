@@ -27,10 +27,10 @@
 								name="action" value="delete">Delete</button>
 						</li><li class="nav-item"><button
 								class="btn btn-link btn-block" type="submit" name="action"
-								value="enable">Enable</button></li>
+								value="unblock">Unblock</button></li>
 						<li class="nav-item"><button
 								class="btn btn-link btn-block" type="submit" name="action"
-								value="disable">Disable</button></li>
+								value="block">Block</button></li>
 					</ul>
 				</div>
 				<div class="navbar-nav ml-auto">

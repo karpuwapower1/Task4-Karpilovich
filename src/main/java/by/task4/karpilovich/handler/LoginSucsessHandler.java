@@ -10,12 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import by.task4.karpilovich.service.UserService;
+import by.task4.karpilovich.service.impl.UserServiceImpl;
 
 public class LoginSucsessHandler implements AuthenticationSuccessHandler {
 
 	@Autowired
-	UserService userService;
+	UserServiceImpl userService;
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

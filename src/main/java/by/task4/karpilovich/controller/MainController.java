@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import by.task4.karpilovich.service.UserService;
+import by.task4.karpilovich.service.impl.UserServiceImpl;
 
 @Controller
 public class MainController {
@@ -17,7 +17,7 @@ public class MainController {
 	private static final String REDIRECT_TO_USERS_PAGE = "redirect:/users";
 
 	@Autowired
-	private UserService userService;
+	private UserServiceImpl userService;
 
 	@GetMapping("/users")
 	public String getMainPage(Model model) {
@@ -35,21 +35,21 @@ public class MainController {
 		return REDIRECT_TO_USERS_PAGE;
 	}
 
-	@PostMapping(path = "/users", params = "action=disable")
-	public String disableUsers(@RequestParam(value = USER_ID_PARAMETER, required = false) Long[] userId) {
+	@PostMapping(path = "/users", params = "action=block")
+	public String blockUsers(@RequestParam(value = USER_ID_PARAMETER, required = false) Long[] userId) {
 		if (userId != null) {
 			for (Long id : userId) {
-				userService.disableUser(id);
+				userService.blockUser(id);
 			}
 		}
 		return REDIRECT_TO_USERS_PAGE;
 	}
 
-	@PostMapping(path = "/users", params = "action=enable")
+	@PostMapping(path = "/users", params = "action=unblock")
 	public String enableUsers(@RequestParam(value = USER_ID_PARAMETER, required = false) Long[] userId) {
 		if (userId != null) {
 			for (Long id : userId) {
-				userService.enableUser(id);
+				userService.unblockUser(id);
 			}
 		}
 		return REDIRECT_TO_USERS_PAGE;
